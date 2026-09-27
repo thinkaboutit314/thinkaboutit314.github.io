@@ -22,25 +22,3 @@ void dfs(int rem, int start, vector<int>& path) {
     }
 }
 
-```mermaid
-
-mindmap
-  root((DFS 回溯算法))
-    核心要素
-      程序调用栈与递归
-      状态转移路径 (Path)
-      边界终止条件
-    实战：整数分解
-      题目：将正整数 N 进行加法分解
-      要求 1：双重排序约束
-      要求 2：序列非递增
-    剪枝逻辑 (Pruning)
-      当前层选择上限
-      ::icon(fa fa-scissors)
-      受到上一层起点限制 (i <= start)
-      受到剩余总量限制 (i <= rem)
-      最终合并：i = min(start, rem)
-    心智模型调整
-      易错：深陷栈帧追踪的认知割裂
-      解法：建立全局黑盒信任
-      专注构造当前层的输入输出
