@@ -21,7 +21,9 @@ void dfs(int rem, int start, vector<int>& path) {
         path.pop_back(); // 回溯，恢复现场
     }
 }
+
 ```mermaid
+
 mindmap
   root((DFS 回溯算法))
     核心要素
