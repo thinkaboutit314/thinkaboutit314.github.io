@@ -52,62 +52,7 @@ int bruteForce(const string& text, const string& pattern) {
 }
 ```
 
-### 2. RK 算法 (Rabin-Karp)
-利用滚动哈希进行匹配。为了防止溢出，通常会对一个大素数取模。
-*   **核心思想**：引入了**哈希（Hash）**机制。它先计算模式串的哈希值，然后利用“滑动窗口”每次计算主串中长度为 $m$ 的子串的哈希值。如果哈希值不相等，说明字符串绝对不匹配；如果哈希值相等，再逐个字符对比以排除哈希冲突。
-*   **时间复杂度**：平均情况为 $O(n+m)$，最坏情况（频繁发生哈希冲突）为 $O(n \times m)$。
-*   **适用场景**：查重系统、简单的多模式匹配（通过对比多个哈希值）。
-
-```cpp
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int rabinKarp(const string& text, const string& pattern) {
-    int n = text.length();
-    int m = pattern.length();
-    if (m == 0) return 0;
-
-    const int d = 256; // 字符集大小
-    const int q = 101; // 一个素数，用于取模防止溢出
-    
-    int h = 1;
-    for (int i = 0; i < m - 1; i++) {
-        h = (h * d) % q;
-    }
-
-    int pHash = 0; // 模式串的哈希值
-    int tHash = 0; // 主串当前窗口的哈希值
-
-    // 计算模式串和主串第一个窗口的哈希值
-    for (int i = 0; i < m; i++) {
-        pHash = (d * pHash + pattern[i]) % q;
-        tHash = (d * tHash + text[i]) % q;
-    }
-
-    for (int i = 0; i <= n - m; i++) {
-        // 哈希值匹配时，还需要进行二次确认，排除哈希冲突
-        if (pHash == tHash) {
-            int j = 0;
-            for (j = 0; j < m; j++) {
-                if (text[i + j] != pattern[j]) break;
-            }
-            if (j == m) return i;
-        }
-
-        // 计算下一个窗口的哈希值 (滚动哈希)
-        if (i < n - m) {
-            tHash = (d * (tHash - text[i] * h) + text[i + m]) % q;
-            // 如果哈希值为负数，转换为正数
-            if (tHash < 0) tHash = (tHash + q);
-        }
-    }
-    return -1;
-}
-```
-
-### 3. KMP 算法
+### 2. KMP 算法
 
 KMP 的核心在于求解 `next` 数组，遇到不匹配时主串指针 `i` 不回退，仅回退模式串指针 `j`。
 
