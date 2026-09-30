@@ -17,7 +17,7 @@
 *   **[2026-08]** 二分搜索。
 *   **[2026-09]** 数据结构1：Veclist&&Linklist。
 *   **[2026-09]** 数据结构2：Queue&&Stack。
-*   **[2026-09]** DFS 回溯剪枝&&BFS 寻找最短路径。./algorithms/basic/dfs-bfs.md
+*   **[2026-09]** DFS 回溯剪枝&&BFS 寻找最短路径。(./algorithms/basic/dfs-bfs.md)
 
 ---
 
