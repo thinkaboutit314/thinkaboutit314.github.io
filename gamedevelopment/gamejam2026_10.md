@@ -23,3 +23,7 @@
         - 一种“能力”（旷野之息里的四个道具）
             - <img width="250" height="150" alt="07054ea607ab4cef2a4d304bce0385ee" src="https://github.com/user-attachments/assets/eb059dc9-e30a-4491-b060-758ecce08578" />
     - 与环境的交互
+ 
+### 可能的实现方式
+- 设计几个“根节点”的核心玩法
+- 一、关卡闯关 二、塞尔达神庙（从0开始的生活）
