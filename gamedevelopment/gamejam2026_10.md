@@ -29,4 +29,4 @@
 - 类型
   - 一、rougelike游戏（实现难度大）
   - 二、关卡闯关，使用获得的能力通关
-  - 三、塞尔达孤岛神庙（开局只有能力，通关方式是打boss）【【塞尔达】荒岛野外试炼，不卸装备通过，全程高能，结尾核能。】https://www.bilibili.com/video/BV1tq4y137UW?vd_source=6000f1b3bd794882baa372796705eae5
+  - 三、塞尔达孤岛神庙（开局只有能力，通关方式是打boss）【【塞尔达传说 旷野之息】荒岛试炼—手残也能学会的塞哈特诺岛攻略】https://www.bilibili.com/video/BV1pyaxeDE4u?vd_source=6000f1b3bd794882baa372796705eae5
